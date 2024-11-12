@@ -5,33 +5,25 @@ I created this fetchable api to be used by whoever needs it to provide several p
 ### Endpoint: https://avyrie.github.io/affirmations-api/affirmations.json
 
 ## Fetch Random Affirmation
-The below code can be used to fetch a random affirmation from this api using JS fetch:
+The following node.js code can fetch a random affirmation:
 
+```js
 const fetch = require('node-fetch');
-<br />
 const url = 'https://avyrie.github.io/affirmations-api/affirmations.json';
-<br />
 const randomNum = (arrLength) => {
-<br />
     return Math.floor(Math.random() * arrLength)
-<br />
 }
-<br />
 const fetchData = () => {
-<br />
     fetch(url)
-<br />
     .then(response => response.json())
-<br />
     .then(data => console.log(data.affirmations[(randomNum(data.affirmations.length))]))
-<br />
     .catch(err => {
-<br />
         console.log(err)
-<br />
     })
-<br />
 }
+```
+
+If you are running iOS, there is a [Shortcut to fetch a random affirmation](https://www.icloud.com/shortcuts/88824df962704cb9b2ec73c7b1624895) which can be used as a building block - say in an alarm.
 
 
 ## Contributing
